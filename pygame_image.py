@@ -28,6 +28,8 @@ def main():
             kk_rct.move_ip((-1, 0))  # こうかとんの横座標を-1する
         if key_lst[pg.K_RIGHT]:  # 下矢印キーがTrueなら
             kk_rct.move_ip((+1, 0))  # こうかとんの横座標を+1する
+        else:
+            kk_rct.move_ip((-1, 0))#####演習1
 
         #x = -(tmr%800)###6
         x = -(tmr%3200)####7
@@ -39,8 +41,8 @@ def main():
         screen.blit(kk_img, kk_rct)  # 練習４ -> 練習8-5
         pg.display.update()
         tmr += 1        
-        #clock.tick(200)##5
-        clock.tick(400)######7
+        clock.tick(200)##5
+        #clock.tick(400)######7
 
 
 if __name__ == "__main__":
