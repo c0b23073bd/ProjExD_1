@@ -17,19 +17,30 @@ def main():
     kk_rct.center = 300, 200 #####8-2
     tmr = 0
     while True:
+        a = 0
+        b = 0
+        
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed()####8-3
         if key_lst[pg.K_UP]:  # 上矢印キーがTrueなら
-            kk_rct.move_ip((0, -1))  # こうかとんの縦座標を-1する
+            b = -1
+            #kk_rct.move_ip((a, b))
+            #kk_rct.move_ip((0, -1))  # こうかとんの縦座標を-1する
         if key_lst[pg.K_DOWN]:  # 下矢印キーがTrueなら
-            kk_rct.move_ip((0, +1))  # こうかとんの縦座標を+1する
+            b = 1
+            #kk_rct.move_ip((a, b))# こうかとんの縦座標を+1する
         if key_lst[pg.K_LEFT]:  # 下矢印キーがTrueなら
-            kk_rct.move_ip((-1, 0))  # こうかとんの横座標を-1する
+            a = -1
+            #kk_rct.move_ip((a, b))  # こうかとんの横座標を-1する
         if key_lst[pg.K_RIGHT]:  # 下矢印キーがTrueなら
-            kk_rct.move_ip((+1, 0))  # こうかとんの横座標を+1する
+            a = 2
+            #kk_rct.move_ip((a, b))  # こうかとんの横座標を+1する
         else:
-            kk_rct.move_ip((-1, 0))#####演習1
+            a = -1
+            #kk_rct.move_ip((a,b))#####演習1
+        kk_rct.move_ip((a,b))
+
 
         #x = -(tmr%800)###6
         x = -(tmr%3200)####7
